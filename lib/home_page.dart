@@ -19,9 +19,8 @@ class _HomePageState extends State<HomePage> {
     agatetepe.Response response = await agatetepe.get(url);
 
     Map<String, dynamic> retorno = json.decode(response.body);
-    dynamic id = retorno ["id"];
-    String advice = retorno ["advice"];
-
+    print (retorno['slip']['advice'].toString());
+    //listaDeItens.add(retorno);
 
   }
 
@@ -118,6 +117,10 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
           ),
+          RaisedButton(
+            child: Text("Teste"),
+            onPressed: _recuperar,
+          )
         ],
       ),
     );
